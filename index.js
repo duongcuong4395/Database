@@ -8,12 +8,17 @@ const mongoose = require('mongoose');
 //const product = require('./routes/product.route'); // Imports routes for the products
 // initialize our express app
 const app = express();
-let port = 1234;
+const port = process.env.PORT || 1234
+// Configuration
 
+app.set('views', __dirname + '/views');
+//app.use(express.bodyDecoder());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }))
 // parse requests of content-type - application/json
 app.use(bodyParser.json())
+
+
 
 mongoose.Promise = global.Promise;
 // Connecting to the database
