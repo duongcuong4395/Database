@@ -17,8 +17,10 @@ app.set('views', __dirname + '/views');
 app.use(bodyParser.urlencoded({ extended: true }))
 // parse requests of content-type - application/json
 app.use(bodyParser.json())
-
-
+//specify the folder which will contain your files, in our case ‘uploads’ and set your headers and content type
+// specify the folder
+app.use(express.static(path.join(__dirname, 'resources')));
+app.use(express.static(__dirname + '/public')); //provide static directory for front-ent
 
 mongoose.Promise = global.Promise;
 // Connecting to the database
