@@ -5,6 +5,7 @@ const mongoClient = require('mongodb');
 // Configuring the database
 const dbConfig = require('./config/database.config.js');
 const mongoose = require('mongoose');
+const path = require('path');//nodejs package for file paths
 //const product = require('./routes/product.route'); // Imports routes for the products
 // initialize our express app
 const app = express();
